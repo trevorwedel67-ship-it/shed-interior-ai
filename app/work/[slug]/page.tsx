@@ -180,6 +180,10 @@ const caseStudyData: Record<
   },
 };
 
+export function generateStaticParams() {
+  return Object.keys(caseStudyData).map((slug) => ({ slug }));
+}
+
 export default async function CaseStudyPage({
   params,
 }: {

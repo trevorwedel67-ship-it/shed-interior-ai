@@ -103,6 +103,10 @@ const blogData: Record<
   },
 };
 
+export function generateStaticParams() {
+  return Object.keys(blogData).map((slug) => ({ slug }));
+}
+
 export default async function BlogPostPage({
   params,
 }: {
