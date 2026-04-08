@@ -1,9 +1,17 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, Suspense, useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 
 export default function BuilderPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gray-50" />}>
+      <BuilderContent />
+    </Suspense>
+  );
+}
+
+function BuilderContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
