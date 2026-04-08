@@ -1,4 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
+import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 
 const stats = [
   { value: "200+", label: "Clients Served" },
@@ -186,6 +188,36 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* ───── SCROLL SHOWCASE ───── */}
+      <section className="bg-gray-950 overflow-hidden">
+        <ContainerScroll
+          titleComponent={
+            <>
+              <p className="text-sm font-semibold uppercase tracking-widest text-violet-400 mb-4">
+                Our Platform
+              </p>
+              <h2 className="text-4xl md:text-[5rem] font-bold leading-none text-white">
+                Marketing intelligence,{" "}
+                <span className="gradient-text">all in one place.</span>
+              </h2>
+              <p className="mt-6 text-lg text-gray-400 max-w-2xl mx-auto">
+                Real-time dashboards, campaign analytics, and AI-powered
+                insights — built for teams that move fast.
+              </p>
+            </>
+          }
+        >
+          <Image
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&q=75"
+            alt="Marketing analytics dashboard"
+            height={720}
+            width={1400}
+            className="mx-auto rounded-2xl object-cover h-full object-left-top"
+            draggable={false}
+          />
+        </ContainerScroll>
       </section>
 
       {/* ───── TRUSTED BY ───── */}
