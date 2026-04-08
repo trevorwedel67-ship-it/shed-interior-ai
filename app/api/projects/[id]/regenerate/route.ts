@@ -5,9 +5,9 @@ import {
   type AIPlan,
 } from "@/lib/project-file-store";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
+function getOpenAI() {
+  return new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+}
 
 type Props = {
   params: Promise<{
@@ -62,7 +62,7 @@ Rules:
 - No extra commentary
 `;
 
-    const response = await openai.responses.create({
+    const response = await getOpenAI().responses.create({
       model: "gpt-4.1-mini",
       input: prompt,
     });
