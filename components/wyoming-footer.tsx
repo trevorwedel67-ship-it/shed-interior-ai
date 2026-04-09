@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Mountain, Mail, Phone, MapPin, Facebook, Instagram } from "lucide-react";
+import { Mountain, Mail, Phone, MapPin, Share2, Link2 } from "lucide-react";
 
 export default function WyomingFooter() {
   return (
@@ -28,7 +28,7 @@ export default function WyomingFooter() {
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-stone-800 text-stone-400 hover:bg-amber-700 hover:text-white transition-colors"
                 aria-label="Facebook"
               >
-                <Facebook className="w-4 h-4" />
+                <Share2 className="w-4 h-4" />
               </a>
               <a
                 href="https://instagram.com"
@@ -37,7 +37,7 @@ export default function WyomingFooter() {
                 className="flex h-9 w-9 items-center justify-center rounded-full bg-stone-800 text-stone-400 hover:bg-amber-700 hover:text-white transition-colors"
                 aria-label="Instagram"
               >
-                <Instagram className="w-4 h-4" />
+                <Link2 className="w-4 h-4" />
               </a>
             </div>
           </div>

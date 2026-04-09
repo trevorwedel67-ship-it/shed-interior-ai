@@ -5,6 +5,7 @@ import { getFeaturedProducts, getNewArrivals } from "@/lib/products";
 import { ProductCard } from "@/components/ui/product-card-1";
 import { OfferCarousel, type Offer } from "@/components/ui/offer-carousel";
 import ColorfulPricing from "@/components/ui/colorful-pricing";
+import PricingPage from "@/components/ui/pricing-page";
 
 const wyomingOffers: Offer[] = [
   {
@@ -255,6 +256,9 @@ export default function HomePage() {
 
       {/* ─── MEMBERSHIP PRICING ─── */}
       <ColorfulPricing ctaHref="/contact" />
+
+      {/* ─── PLANS ─── */}
+      <PricingPage />
 
       {/* ─── NEW ARRIVALS ─── */}
       <section className="py-20 bg-amber-50/50">
