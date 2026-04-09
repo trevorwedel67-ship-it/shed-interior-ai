@@ -3,6 +3,70 @@ import { ArrowRight, Star, Truck, RotateCcw, Shield, Heart } from "lucide-react"
 import { CommerceHero } from "@/components/ui/commerce-hero";
 import { getFeaturedProducts, getNewArrivals } from "@/lib/products";
 import { ProductCard } from "@/components/ui/product-card-1";
+import { OfferCarousel, type Offer } from "@/components/ui/offer-carousel";
+import ColorfulPricing from "@/components/ui/colorful-pricing";
+
+const wyomingOffers: Offer[] = [
+  {
+    id: 1,
+    imageSrc: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
+    imageAlt: "Hand-carved wooden art piece",
+    tag: "Limited Time",
+    title: "25% OFF Cedar Bowls",
+    description: "Handcrafted from Wyoming cedar. While supplies last.",
+    brandLogoSrc: "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=80&q=80",
+    brandName: "Wood Art",
+    promoCode: "CEDAR25",
+    href: "/shop?category=Wood+Art",
+  },
+  {
+    id: 2,
+    imageSrc: "https://images.unsplash.com/photo-1544956291-f1fc9394cca7?w=800&q=80",
+    imageAlt: "Handmade Wyoming quilt",
+    tag: "Free Shipping",
+    title: "Free Shipping on Quilts",
+    description: "All handmade quilt orders ship free, no minimum.",
+    brandLogoSrc: "https://images.unsplash.com/photo-1591195853828-11db59a44f43?w=80&q=80",
+    brandName: "Quilts",
+    promoCode: "QUILTSHIP",
+    href: "/shop?category=Quilts",
+  },
+  {
+    id: 3,
+    imageSrc: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&q=80",
+    imageAlt: "Turquoise and silver jewelry",
+    tag: "New Arrival",
+    title: "New Western Jewelry",
+    description: "Sterling silver & turquoise — just in from the workshop.",
+    brandLogoSrc: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=80&q=80",
+    brandName: "Jewelry",
+    href: "/shop?category=Jewelry",
+  },
+  {
+    id: 4,
+    imageSrc: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=800&q=80",
+    imageAlt: "Hand-thrown pottery mug",
+    tag: "Discount",
+    title: "15% OFF Pottery",
+    description: "Earthy mugs & bowls glazed in Wyoming tones.",
+    brandLogoSrc: "https://images.unsplash.com/photo-1481754100984-dbae571c6a56?w=80&q=80",
+    brandName: "Pottery",
+    promoCode: "CLAY15",
+    href: "/shop?category=Pottery",
+  },
+  {
+    id: 5,
+    imageSrc: "https://images.unsplash.com/photo-1627123424574-724758594e93?w=800&q=80",
+    imageAlt: "Handcrafted leather wallet",
+    tag: "Offer",
+    title: "Leather Goods Bundle",
+    description: "Buy any 2 leather items and save $15 at checkout.",
+    brandLogoSrc: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=80&q=80",
+    brandName: "Leather",
+    promoCode: "LEATHER2",
+    href: "/shop?category=Leather",
+  },
+];
 
 const testimonials = [
   {
@@ -73,6 +137,29 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ─── DEALS CAROUSEL ─── */}
+      <section className="py-16 bg-white">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="flex items-end justify-between mb-8">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-widest text-amber-700">
+                Current Deals
+              </p>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-stone-900">
+                Deals of the Day
+              </h2>
+            </div>
+            <Link
+              href="/shop"
+              className="hidden items-center gap-1 text-sm font-semibold text-amber-800 hover:underline sm:flex"
+            >
+              All products <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+          <OfferCarousel offers={wyomingOffers} />
         </div>
       </section>
 
@@ -165,6 +252,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ─── MEMBERSHIP PRICING ─── */}
+      <ColorfulPricing ctaHref="/contact" />
 
       {/* ─── NEW ARRIVALS ─── */}
       <section className="py-20 bg-amber-50/50">
